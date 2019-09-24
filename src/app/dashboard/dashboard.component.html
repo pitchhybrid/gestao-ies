@@ -1,0 +1,82 @@
+<div style="margin-top: 15px">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <nav class="panel">
+                    <p class="panel-heading">
+                            AVISOS IMPORTANTES
+                    </p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                        <input class="input is-small" type="text" placeholder="procurar">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </span>
+                        </p>
+                    </div>
+                    <a class="panel-block is-active" *ngFor="let menssagem of menssagens">
+                        <span class="panel-icon">
+                            <i class="fas fa-sticky-note"></i>
+                        </span>
+                        {{menssagem}}
+                    </a>
+                    <div class="panel-block">
+                        <button class="button is-link is-outlined is-fullwidth">
+                        Ver Todos
+                        </button>
+                    </div>
+                </nav>
+                
+            </div>
+            <div class="column">
+                <nav class="panel">
+                    <p class="panel-heading">
+                            PROFESSORES
+                    </p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                        <input class="input is-small" type="text" placeholder="procurar">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </span>
+                        </p>
+                    </div>
+                    <a class="panel-block is-active" *ngFor="let professor of professores">
+                        <span class="panel-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </span>
+                        {{professor}}
+                    </a>
+                    <div class="panel-block">
+                        <button class="button is-link is-outlined is-fullwidth">
+                        Ver Todos
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="hero">
+        <div class="hero-body">
+            <p class="title">MAPA DE SALAS</p>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-1">
+            <ul>
+                <li>1 ANDAR</li>
+                <li>2 ANDAR</li>
+                <li>3 ANDAR</li>
+                <li>4 ANDAR</li>
+            </ul>
+        </div>
+        <div class="column">
+            <div class="container">
+                <img src="../../assets/mapa.jpg" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    
+</div>

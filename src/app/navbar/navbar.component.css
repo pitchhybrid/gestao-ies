@@ -1,0 +1,22 @@
+
+.logo > img{
+    width: 70px;
+    max-height: 100%;
+}
+
+.usuario > img{
+    object-fit: cover;
+    border: 1px solid whitesmoke;
+    border-radius: 50%;
+    height: 40px;
+    max-height: 100%
+
+}
+
+.navbar-item{
+    color:white;
+}
+
+.navbar-dropdown > .navbar-item{
+    color:#4a4a4a;
+}

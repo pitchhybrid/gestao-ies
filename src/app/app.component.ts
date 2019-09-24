@@ -5,6 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'gestao-ies';
+export class AppComponent{
+  rendered: boolean = false;
+  renderNav: boolean = true;
+
+  constructor(){
+      
+  }
+  
 }

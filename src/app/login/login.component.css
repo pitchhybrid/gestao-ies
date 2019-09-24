@@ -3,20 +3,20 @@
 }
 
 .center-all{
-    width: 50%;
+    width: 40%;
     position: absolute;
-    bottom:50%;
+    top: 0;
     left: 50%;
 }
 .caixa{
-    transform: translate(-50%,50%)
+    height: 100vh;
+    transform: translate(-50%)
 }
 
 .center-logo{
     position: relative;
     left: 50%;
 }
-.logo-container{
+.logo{
     transform: translate(-50%)
 }
-

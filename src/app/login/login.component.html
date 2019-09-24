@@ -1,46 +1,42 @@
-<section class="hero is-primary height-all">
-    <div class="hero-body">
-        <div class="container center-all">
-            <div class="caixa box has-background-info"> 
-                <div class="container center-logo">
-                    <img class="logo" src="../assets/estacio-logo.png" width="150px">
-                </div>
-                <div class="columns">
-                    <div class="column is-1"></div>
-                    <div class="column">
-                        <div class="field">
-                            <label class="label has-text-white">MATRICULA:</label>
-                            <div class="control">
-                                <input class="input" type="text">
-                            </div>
-                        </div>
+<div class="container center-all-login">
+    <div class="caixa-login box has-background-info"> 
+        <div class="container center-logo-login">
+            <img class="logo-login" src="../assets/estacio-logo.png" width="150px">
+        </div>
+        <div class="columns">
+            <div class="column is-1"></div>
+            <div class="column">
+                <div class="field">
+                    <label class="label has-text-white">MATRICULA:</label>
+                    <div class="control">
+                        <input [(ngModel)]="matricula" class="input" type="text">
                     </div>
-                    <div class="column is-1"></div>
-                </div>
-                <div class="columns">
-                    <div class="column is-1"></div>
-                    <div class="column">
-                        <div class="field">
-                            <label class="label has-text-white">SENHA:</label>
-                            <div class="control">
-                                <input class="input" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-1"></div>
-                </div>
-                <div class="columns">
-                    <div class="column is-1"></div> 
-                    <div class="column">
-                        <button [routerLink]="['/cadastrar']" class="button is-white is-fullwidth">Ainda Não Se Cadastrou?</button>
-                    </div>
-                    <div class="column is-1"></div> 
-                    <div class="column">
-                        <button routerLink="login" class="button is-white is-fullwidth">Login</button>
-                    </div>
-                    <div class="column is-1"></div> 
                 </div>
             </div>
+            <div class="column is-1"></div>
+        </div>
+        <div class="columns">
+            <div class="column is-1"></div>
+            <div class="column">
+                <div class="field">
+                    <label class="label has-text-white">SENHA:</label>
+                    <div class="control">
+                        <input [(ngModel)]="senha" class="input" type="password">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-1"></div>
+        </div>
+        <div class="columns">
+            <div class="column is-1"></div> 
+            <div class="column">
+                <button (click)="change()" class="button is-white is-fullwidth">Ainda Não Se Cadastrou?</button>
+            </div>
+            <div class="column is-1"></div> 
+            <div class="column">
+                <button (click)="logar()" class="button is-white is-fullwidth">Login</button>
+            </div>
+            <div class="column is-1"></div> 
         </div>
     </div>
-</section>
+</div>

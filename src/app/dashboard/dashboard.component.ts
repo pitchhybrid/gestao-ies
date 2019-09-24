@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { mensagens } from '../mock.menssagens';
-import { professores } from '../mock.professores';
+import  { mensagens ,professores } from '../mock';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
-  rendered: boolean = false;
-  renderNav: boolean = true;
+export class AppComponent implements OnInit{
+  
+  rendered: string;
 
-  constructor(){
-      
+  ngOnInit(){
+    this.rendered = 'app'; 
   }
   
+  listener(event){
+    this.rendered = event;
+  }
+
 }

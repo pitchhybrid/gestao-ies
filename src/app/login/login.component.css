@@ -1,22 +1,18 @@
-.height-all{
-    height: 100vh;
-}
-
-.center-all{
+.center-all-login{
     width: 40%;
     position: absolute;
     top: 0;
     left: 50%;
 }
-.caixa{
+.caixa-login{
     height: 100vh;
     transform: translate(-50%)
 }
 
-.center-logo{
+.center-logo-login{
     position: relative;
     left: 50%;
 }
-.logo{
+.logo-login{
     transform: translate(-50%)
 }

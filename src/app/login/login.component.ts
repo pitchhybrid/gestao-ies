@@ -30,12 +30,20 @@ export class LoginComponent implements OnInit {
     this.name.emit('cadastrar');
   }
 
-  logar(){
+  logado():boolean{
     for(var i of usuarios){
-      if(this.matricula == i.matricula && this.senha == i.senha){
-        this.login.emit('dashboard')
-        this.router.navigate(['/dashboard'])
-      }
+      if(this.matricula == i.matricula && this.senha == i.senha)
+        return true
+    }
+    return false;
+  }
+
+  logar(){
+    if(this.logado()){
+      this.login.emit('dashboard')
+      this.router.navigate(['/dashboard'])
+    }else{
+      this.login.emit('error')
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,18 @@ import { Component , OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
-  rendered: string;
-
+  rota: string;
   ngOnInit(){
-    this.rendered = 'app'; 
+    this.rota = 'inicio'; 
   }
   
   listener(event){
-    this.rendered = event;
+    if(event == 'error'){
+      alert('Usuario ou senha incorretos')
+    }else{
+      this.rota = event;
+      
+    }
   }
 
 }

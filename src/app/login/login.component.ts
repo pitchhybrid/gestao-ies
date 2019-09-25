@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { usuarios } from './../mock';
 
 @Component({
@@ -10,12 +10,18 @@ import { usuarios } from './../mock';
 export class LoginComponent implements OnInit {
   
   @Output() name = new EventEmitter<string>();
-  
+  @Output() login = new EventEmitter<string>();
+
   usuarios = usuarios;
   
   matricula:string;
   senha: string;
+  router:Router;
 
+  constructor(router:Router){
+    this.router = router;
+  }
+  
   ngOnInit() {
     
   }
@@ -27,7 +33,8 @@ export class LoginComponent implements OnInit {
   logar(){
     for(var i of usuarios){
       if(this.matricula == i.matricula && this.senha == i.senha){
-        this.name.emit('none')
+        this.login.emit('dashboard')
+        this.router.navigate(['/dashboard'])
       }
     }
   }

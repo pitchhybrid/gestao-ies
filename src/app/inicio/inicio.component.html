@@ -1,0 +1,27 @@
+<section class="hero is-primary height-all">
+    <div class="hero-body">
+      <div *ngIf="rendered == 'app'" class="container center-all-app">
+        <div class="caixa-app box has-background-info"> 
+            <div class="container center-logo-app">
+                <img class="logo-container-app" src="../assets/estacio-logo.png" width="150px">
+            </div>
+            <div class="container" style="height: 100px">
+                <p class="title has-text-centered is-4">GESTÃO DE RECURSOS</p>
+            </div>
+            <div class="columns">
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button (click)="rendered = 'cadastrar'" class="button is-white is-fullwidth">Cadastre-se</button>
+                </div>
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button (click)="rendered = 'login'" class="button is-white is-fullwidth">Login</button>
+                </div>
+                <div class="column is-1"></div> 
+            </div>
+        </div>
+      </div>
+      <app-login (name)="listener($event)" (login)="listener($event)" *ngIf="rendered == 'login'"></app-login>
+      <app-cadastrar (name)="listener($event)" *ngIf="rendered == 'cadastrar'"></app-cadastrar>
+    </div>
+</section>

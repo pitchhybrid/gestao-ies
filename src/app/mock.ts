@@ -25,6 +25,5 @@ export const mensagens: string[] = [
 ]
 
 export const usuarios: {id:number,matricula:string,senha:string}[] = [
-    { id:1, matricula:'123', senha:'123456'},
-    { id:2, matricula:'1234', senha:'123456'}
+    { id:1, matricula:'123', senha:'123'}
 ]

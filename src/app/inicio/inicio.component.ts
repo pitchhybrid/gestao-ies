@@ -16,7 +16,7 @@ export class InicioComponent implements OnInit {
   }
 
   listener(event){
-    if(event == ('app'|| 'cadastrar' || 'login'))
+    if(event == 'app'|| event == 'cadastrar' || event == 'login')
     this.rendered = event;
     if(event == 'error')
     this.rota.emit(event)

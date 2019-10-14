@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import  { mensagens ,professores } from '../mock';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +7,6 @@ import  { mensagens ,professores } from '../mock';
 })
 export class DashboardComponent implements OnInit {
 
-  menssagens: string[] = mensagens;
-  professores: string[] = professores;
   constructor() { }
 
   ngOnInit() {

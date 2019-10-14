@@ -13,12 +13,14 @@
     
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a [routerLink]="['/dashboard']" class="navbar-item">
                 Home
             </a>
-        
-            <a class="navbar-item">
+            <a [routerLink]="['cadastros']" class="navbar-item">
                 Cadastros
+            </a>
+            <a [routerLink]="['reserva']" class="navbar-item">
+                Reserva
             </a>
         </div>
 
@@ -29,11 +31,11 @@
                 </a>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link has-text-white">
+                <a class="navbar-link">
                     <i class="fas fa-cogs"></i>
                 </a>
                 <div class="navbar-dropdown">
-                    <a class="navbar-item">
+                    <a class="navbar-item" (click)="deslogar()">
                     Sair
                     </a>
                 </div>

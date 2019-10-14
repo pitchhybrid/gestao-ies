@@ -1,0 +1,9 @@
+.to-right{
+    float: right;
+    margin-top: -5px
+}
+
+.scroll{
+    max-height: 250px;
+    overflow: auto;
+}

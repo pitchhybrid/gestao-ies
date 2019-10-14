@@ -32,8 +32,10 @@ export class LoginComponent implements OnInit {
 
   logado():boolean{
     for(var i of usuarios){
-      if(this.matricula == i.matricula && this.senha == i.senha)
+      if(this.matricula == i.matricula && this.senha == i.senha){
+        localStorage.setItem("LOGIN",btoa(`{login:${i.matricula},senha:${i.senha}}`))
         return true
+      }
     }
     return false;
   }

@@ -1,3 +1,3 @@
 <app-inicio (rota)="listener($event)" *ngIf="rota == 'inicio'"></app-inicio>
-<app-navbar *ngIf="rota == 'dashboard'"></app-navbar>
+<app-navbar *ngIf="rota == 'dashboard'" (rota)="listener($event)"></app-navbar>
 <router-outlet *ngIf="rota == 'dashboard'"></router-outlet>

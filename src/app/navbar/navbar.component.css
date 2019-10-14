@@ -20,3 +20,10 @@
 .navbar-dropdown > .navbar-item{
     color:#4a4a4a;
 }
+
+.has-dropdown > .navbar-link{
+    color:#ffffff;
+}
+.has-dropdown:hover > .navbar-link{
+    color:#3273dc
+}

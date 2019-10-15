@@ -1,42 +1,44 @@
 <div class="container center-all-login">
-    <div class="caixa-login box has-background-info"> 
-        <div class="container center-logo-login">
-            <img class="logo-login" src="../assets/estacio-logo.png" width="150px">
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">MATRICULA:</label>
-                    <div class="control">
-                        <input [(ngModel)]="matricula" class="input" type="text">
+    <form [formGroup]="form" (ngSubmit)="logar()">
+        <div class="caixa-login box has-background-info"> 
+            <div class="container center-logo-login">
+                <img class="logo-login" src="../assets/estacio-logo.png" width="150px">
+            </div>
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">MATRICULA:</label>
+                        <div class="control">
+                            <input formControlName="matricula" class="input" type="text">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">SENHA:</label>
-                    <div class="control">
-                        <input [(ngModel)]="senha" class="input" type="password">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">SENHA:</label>
+                        <div class="control">
+                            <input formControlName="senha" autocomplete="" class="input" type="password">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
+            <div class="columns">
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button (click)="change()" class="button is-white is-fullwidth" type="button">Ainda Não Se Cadastrou?</button>
+                </div>
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button class="button is-white is-fullwidth" type="submit">Login</button>
+                </div>
+                <div class="column is-1"></div> 
+            </div>
         </div>
-        <div class="columns">
-            <div class="column is-1"></div> 
-            <div class="column">
-                <button (click)="change()" class="button is-white is-fullwidth">Ainda Não Se Cadastrou?</button>
-            </div>
-            <div class="column is-1"></div> 
-            <div class="column">
-                <button (click)="logar()" class="button is-white is-fullwidth">Login</button>
-            </div>
-            <div class="column is-1"></div> 
-        </div>
-    </div>
+    </form>
 </div>

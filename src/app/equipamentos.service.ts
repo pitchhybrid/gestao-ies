@@ -1,33 +1,33 @@
 import { Injectable } from '@angular/core';
-import {equipamentos,Equipamento} from './mock'
+import {equipamentos, Equipamento} from './mock';
 
-import { isEqual } from 'lodash'
+import { isEqual } from 'lodash';
 @Injectable({
   providedIn: 'root'
 })
 export class EquipamentosService {
 
-  equipamentos:Equipamento[] = equipamentos
-  constructor() { 
+  equipamentos: Equipamento[] = equipamentos;
+  constructor() {
     this.equipamentos = this.listarEquipamentos();
   }
 
-  listarEquipamentos():Equipamento[]{
-    return this.equipamentos
-  }
-  
-  addEquipamento(value:Object){
-    this.equipamentos.push(value)
+  listarEquipamentos(): Equipamento[] {
+    return this.equipamentos;
   }
 
-  editarEquipamento(formObject:Object,value:Object){
-    var index = this.equipamentos.indexOf(formObject)
-    this.equipamentos[index] = value
+  addEquipamento(value: object): void {
+    this.equipamentos.push(value);
   }
 
-  deletarEquipamento(value:Object){
-    this.equipamentos = this.equipamentos.filter(function(item,index){
-      return !isEqual(item,value)
-    })
+  editarEquipamento({ formObject, value }: { formObject: object; value: object; }): void {
+    const index = this.equipamentos.indexOf(formObject);
+    this.equipamentos[index] = value;
+  }
+
+  deletarEquipamento(value: object): void {
+    this.equipamentos = this.equipamentos.filter((item, index) => {
+      return !isEqual(item, value);
+    });
   }
 }

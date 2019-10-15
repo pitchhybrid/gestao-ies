@@ -1,4 +1,4 @@
-import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
@@ -8,19 +8,22 @@ import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
 export class InicioComponent implements OnInit {
   @Output() rota = new EventEmitter<string>();
   rendered: string;
-  
+
   constructor() { }
 
   ngOnInit() {
     this.rendered = 'app';
   }
 
-  listener(event){
-    if( event == 'cadastrar' || event == 'login')
+  listener(event: string) {
+    if ( event === 'cadastrar' || event === 'login') {
     this.rendered = event;
-    if(event == 'error')
-    this.rota.emit(event)
-    if(event == 'dashboard')
-    this.rota.emit(event)
+    }
+    if (event === 'error') {
+    this.rota.emit(event);
+    }
+    if (event === 'dashboard') {
+    this.rota.emit(event);
+    }
   }
 }

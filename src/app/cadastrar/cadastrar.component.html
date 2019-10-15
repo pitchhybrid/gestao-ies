@@ -1,78 +1,80 @@
 <div class="container center-all-cadastro">
-    <div class="caixa-cadastro box has-background-info"> 
-        <div class="container center-logo-cadastro">
-            <img class="logo-cadastro" src="../assets/estacio-logo.png" width="150px">
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">MATRICULA:</label>
-                    <div class="control">
-                        <input class="input" type="text">
+    <form [formGroup]="form" (ngSubmit)="cadastrar()">
+        <div class="caixa-cadastro box has-background-info"> 
+            <div class="container center-logo-cadastro">
+                <img class="logo-cadastro" src="../assets/estacio-logo.png" width="150px">
+            </div>
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">MATRICULA:</label>
+                        <div class="control">
+                            <input class="input" type="text" formControlName="matricula">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">NOME:</label>
-                    <div class="control">
-                        <input class="input" type="text">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">NOME:</label>
+                        <div class="control">
+                            <input class="input" type="text" formControlName="nome">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">E-MAIL:</label>
-                    <div class="control">
-                        <input class="input" type="text">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">E-MAIL:</label>
+                        <div class="control">
+                            <input class="input" type="text" formControlName="email">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">SENHA:</label>
-                    <div class="control">
-                        <input class="input" type="text">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">SENHA:</label>
+                        <div class="control">
+                            <input class="input" type="password" autocomplete="" formControlName="senha">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
-        </div>
-        <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column">
-                <div class="field">
-                    <label class="label has-text-white">CONFIRMAR SENHA:</label>
-                    <div class="control">
-                        <input class="input" type="text">
+            <div class="columns">
+                <div class="column is-1"></div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label has-text-white">CONFIRMAR SENHA:</label>
+                        <div class="control">
+                            <input class="input" type="password" autocomplete="" formControlName="confirmarSenha">
+                        </div>
                     </div>
                 </div>
+                <div class="column is-1"></div>
             </div>
-            <div class="column is-1"></div>
+            <div class="columns">
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button (click)="change()" class="button is-white is-fullwidth" type="button">Já Tem Cadastro?</button>
+                </div>
+                <div class="column is-1"></div> 
+                <div class="column">
+                    <button class="button is-white is-fullwidth" type="submit">Cadastrar</button>
+                </div>
+                <div class="column is-1"></div> 
+            </div>
         </div>
-        <div class="columns">
-            <div class="column is-1"></div> 
-            <div class="column">
-                <button (click)="change()" class="button is-white is-fullwidth">Já Tem Cadastro?</button>
-            </div>
-            <div class="column is-1"></div> 
-            <div class="column">
-                <button class="button is-white is-fullwidth">Cadastrar</button>
-            </div>
-            <div class="column is-1"></div> 
-        </div>
-    </div>
+    </form>
 </div>

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { StatusPipe } from './status.pipe';
 import { ReservaComponent } from './reserva/reserva.component';
 import { AvisosComponent } from './avisos/avisos.component';
 import { ProfessoresComponent } from './professores/professores.component';
+import { SalasComponent } from './salas/salas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProfessoresComponent } from './professores/professores.component';
     StatusPipe,
     ReservaComponent,
     AvisosComponent,
-    ProfessoresComponent
+    ProfessoresComponent,
+    SalasComponent
   ],
   imports: [
     BrowserModule,

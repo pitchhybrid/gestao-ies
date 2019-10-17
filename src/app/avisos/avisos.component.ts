@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AvisosService } from '../avisos.service';
-import { Aviso } from '../mock';
+import { Aviso } from '../aviso';
 
 @Component({
   selector: 'app-avisos',

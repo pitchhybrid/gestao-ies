@@ -1,24 +1,18 @@
-export interface Professor {
-  id: number;
-  professor: string;
-}
-export const professores: Professor[] = [
-  { id: 0, professor: 'PROF:. A' },
-  { id: 1, professor: 'PROF:. B' },
-  { id: 2, professor: 'PROF:. C' },
-  { id: 3, professor: 'PROF:. D' },
-  { id: 4, professor: 'PROF:. E' },
-  { id: 5, professor: 'PROF:. F' },
-  { id: 6, professor: 'PROF:. G' },
-  { id: 7, professor: 'PROF:. H' },
-  { id: 8, professor: 'PROF:. I' },
-  { id: 9, professor: 'PROF:. J' }
-];
+import { Professor } from './professor'
+import { Aviso } from './aviso'
+import { Usuario } from './usuario'
+import { Equipamento } from './equipamento'
+import { Sala } from './sala'
 
-export interface Aviso {
-  id: number;
-  aviso: string;
-}
+export const professores: Professor[] = (()=>{
+  const professores: Professor[] = [];
+  const letras: string = 'ABCDEFGHIJKLIJKLMNIOPQRSTUVWXYZ';
+  let cont: number = 0;
+  for(let i of letras){
+    professores.push({id:++cont,professor:`PROF:. ${i}`});
+  }
+  return professores;
+})();
 
 export const avisos: Aviso[] = [
   { id: 0, aviso: 'PROF:. Z NAO TERÀ AULA HOJE' },
@@ -32,25 +26,10 @@ export const avisos: Aviso[] = [
   { id: 8, aviso: 'PROFESSOR H SALA B 307' },
   { id: 9, aviso: 'PROF:. K NAO TERÀ AULA HOJE' }
 ];
-export interface Usuario {
-  id?: number;
-  nome?: string;
-  email?: string;
-  matricula?: string;
-  senha?: string;
-}
+
 export const usuarios: Usuario[] = [{ id: 1, matricula: '123', senha: '123' }];
 
-export interface Equipamento {
-  codigo?: number;
-  status?: boolean;
-  equipamento?: string;
-  tipo?: string;
-  modelo?: string;
-  fabricante?: string;
-  serie?: string;
-  ultimaManutencao?: Date;
-}
+
 export const equipamentos: Equipamento[] = [
   {
     codigo: 1,
@@ -240,17 +219,20 @@ export const equipamentos: Equipamento[] = [
   }
 ];
 
-export interface Sala {
-  id?: number;
-  bloco?: string;
-  sala?: string ;
-}
+
 
 export const salas: Sala[] = (() => {
   const array: Sala[] = [];
   const blocos: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-  for (let i = 100; i < 420; i++) {
-    array.push({id: i, bloco: blocos[Math.floor(Math.random() * blocos.length)], sala: `${i}` });
+  let a: number = 0
+  for (let i = 100; i <= 420; ++i) {
+    if(a <= 40){
+      array.push({id: i, bloco: blocos[Math.floor(Math.random() * blocos.length)], sala: `${i}` });
+    }
+    if(a === 100){
+      a = 0;
+    }
+    a++;
   }
   return array;
 })();

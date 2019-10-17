@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { isEqual } from 'lodash';
-import {Professor, professores} from './mock';
+import { professores} from './mock';
+import { Professor } from './professor'
 @Injectable({
   providedIn: 'root'
 })

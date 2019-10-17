@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {equipamentos, Equipamento} from './mock';
+import { equipamentos } from './mock';
+import { Equipamento } from './equipamento'
 
 import { isEqual } from 'lodash';
 @Injectable({

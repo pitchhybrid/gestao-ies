@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { usuarios, Usuario } from './mock';
+import { usuarios } from './mock';
+import { Usuario } from './usuario'
 import { isEqual } from 'lodash';
 
 @Injectable({

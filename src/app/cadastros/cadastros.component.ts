@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-// import * as _ from 'lodash'
-import { isEqual } from 'lodash';
 import { EquipamentosService } from '../equipamentos.service';
 
 @Component({
@@ -29,16 +27,7 @@ export class CadastrosComponent implements OnInit {
   }
 
   resetForm() {
-    this.form.setValue({
-        codigo: '',
-        status: '',
-        equipamento: '',
-        tipo: '',
-        modelo: '',
-        fabricante: '',
-        serie: '',
-        ultimaManutencao: ''
-      });
+    this.form.setValue({ codigo: '', status: '', equipamento: '', tipo: '', modelo: '', fabricante: '', serie: '', ultimaManutencao: ''});
   }
 
   ngOnInit() {

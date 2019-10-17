@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { isEqual } from 'lodash';
 
-import { avisos , Aviso} from './mock';
+import { avisos} from './mock';
+import {Aviso} from './aviso';
 @Injectable({
   providedIn: 'root'
 })

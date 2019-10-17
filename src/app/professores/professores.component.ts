@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessoresService } from '../professores.service';
-import { Professor } from '../mock';
+import { Professor } from '../professor';
 
 @Component({
   selector: 'app-professores',
@@ -31,7 +31,10 @@ export class ProfessoresComponent implements OnInit {
       return;
     }
     this.professores = this.professores.filter((item, index) => {
-      return item.professor.includes(event.toUpperCase());
+      if(event.includes('PROF:.')){
+        return item.professor.includes(event.toUpperCase());
+      }
+      return item.professor.includes('PROF:. ' + event.toUpperCase());
     });
   }
 

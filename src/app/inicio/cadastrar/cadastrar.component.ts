@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsuariosService } from '../usuarios.service';
-import { Usuario, usuarios } from '../mock';
+import { UsuariosService } from '../../usuarios.service';
 
 @Component({
   selector: 'app-cadastrar',

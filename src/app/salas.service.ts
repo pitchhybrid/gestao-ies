@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { salas , Sala} from './mock';
+import { salas } from './mock';
+import { Sala } from './sala'
 @Injectable({
   providedIn: 'root'
 })

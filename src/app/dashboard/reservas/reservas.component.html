@@ -1,7 +1,7 @@
 <nav class="panel">
         <div class="panel-heading">
             <i class="fas fa-chalkboard-teacher"></i>
-            Salas
+            Reservas
     </div>
     <div class="panel-block">
         <p class="control has-icons-left">
@@ -12,11 +12,11 @@
         </p>
     </div>
     <div [class]="scroll ? 'scroll':''">
-        <a class="panel-block is-active" *ngFor="let sala of salasService.salas">
+        <a class="panel-block is-active" *ngFor="let reserva of reservaService.reservas">
             <span class="panel-icon">
                 <i class="fas fa-chalkboard-teacher"></i>
             </span>
-            <p>{{sala.bloco}} - {{sala.sala}}</p>
+            <p>{{reserva.tipoReserva}} - {{reserva.reserva.sala || reserva.reserva.equipamento}}</p>
         </a>
     </div>
     <div class="panel-block">

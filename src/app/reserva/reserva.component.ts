@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-reserva',
   templateUrl: './reserva.component.html',
@@ -7,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservaComponent implements OnInit {
 
+  rendered: boolean = true;
+  
   constructor() { }
 
   ngOnInit() {
   }
+ 
 
 }

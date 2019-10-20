@@ -1,14 +1,10 @@
-import { Professor } from './professor'
-import { Aviso } from './aviso'
-import { Usuario } from './usuario'
-import { Equipamento } from './equipamento'
-import { Sala } from './sala'
+import {Aviso,Equipamento,Professor,Reserva,Sala,Usuario} from './interfaces';
 
 export const professores: Professor[] = (()=>{
   const professores: Professor[] = [];
   const letras: string = 'ABCDEFGHIJKLIJKLMNIOPQRSTUVWXYZ';
   let cont: number = 0;
-  for(let i of letras){
+  for(const i of letras){
     professores.push({id:++cont,professor:`PROF:. ${i}`});
   }
   return professores;
@@ -29,10 +25,9 @@ export const avisos: Aviso[] = [
 
 export const usuarios: Usuario[] = [{ id: 1, matricula: '123', senha: '123' }];
 
-
 export const equipamentos: Equipamento[] = [
   {
-    codigo: 1,
+    id: 1,
     status: true,
     equipamento: 'PROJETOR XYZ',
     modelo: 'TETO',
@@ -43,7 +38,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 2,
+    id: 2,
     status: true,
     equipamento: 'PROJETOR ABC',
     modelo: 'MESA',
@@ -54,7 +49,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 3,
+    id: 3,
     status: true,
     equipamento: 'PROJETOR DEF',
     modelo: 'TETO',
@@ -65,7 +60,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 4,
+    id: 4,
     status: true,
     equipamento: 'PROJETOR GHI',
     modelo: 'MESA',
@@ -76,7 +71,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 5,
+    id: 5,
     status: true,
     equipamento: 'PROJETOR JKL',
     modelo: 'TETO',
@@ -87,7 +82,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 6,
+    id: 6,
     status: true,
     equipamento: 'PROJETOR ATX',
     modelo: 'MESA',
@@ -98,7 +93,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 7,
+    id: 7,
     status: true,
     equipamento: 'PROJETOR AYX',
     modelo: 'TETO',
@@ -109,7 +104,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 8,
+    id: 8,
     status: true,
     equipamento: 'PROJETOR BCL',
     modelo: 'MESA',
@@ -120,7 +115,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 9,
+    id: 9,
     status: true,
     equipamento: 'PROJETOR IUA',
     modelo: 'TETO',
@@ -131,7 +126,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 10,
+    id: 10,
     status: true,
     equipamento: 'PROJETOR POA',
     modelo: 'MESA',
@@ -142,7 +137,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 11,
+    id: 11,
     status: true,
     equipamento: 'PROJETOR QWE',
     modelo: 'TETO',
@@ -153,7 +148,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 12,
+    id: 12,
     status: true,
     equipamento: 'PROJETOR QAC',
     modelo: 'MESA',
@@ -164,7 +159,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 13,
+    id: 13,
     status: true,
     equipamento: 'PROJETOR PLJ',
     modelo: 'TETO',
@@ -175,7 +170,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 14,
+    id: 14,
     status: true,
     equipamento: 'PROJETOR NKI',
     modelo: 'MESA',
@@ -186,7 +181,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 15,
+    id: 15,
     status: true,
     equipamento: 'PROJETOR IOU',
     modelo: 'TETO',
@@ -197,7 +192,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 16,
+    id: 16,
     status: true,
     equipamento: 'PROJETOR VXB',
     modelo: 'MESA',
@@ -208,7 +203,7 @@ export const equipamentos: Equipamento[] = [
   },
 
   {
-    codigo: 17,
+    id: 17,
     status: true,
     equipamento: 'PROJETOR ANC',
     modelo: 'TETO',
@@ -218,8 +213,6 @@ export const equipamentos: Equipamento[] = [
     ultimaManutencao: new Date()
   }
 ];
-
-
 
 export const salas: Sala[] = (() => {
   const array: Sala[] = [];
@@ -236,3 +229,21 @@ export const salas: Sala[] = (() => {
   }
   return array;
 })();
+
+
+export const reservas: Reserva[] = (()=>{
+  const reservas: Reserva[] = [];
+  var c = 0
+  for(const professor of professores){
+    reservas.push({id:++c,dataReserva:new Date(),finalizada:true,professor,reserva: salas[c],tipoReserva:'SALA'});
+  }
+  var a = 0
+  for(const professor of professores){
+    var equipamento = equipamentos[++a]
+    reservas.push({id:++c,dataReserva:new Date(),finalizada:false,professor,reserva: equipamento,tipoReserva:'EQUIPAMENTO'});
+      if( a === equipamentos.length - 1){
+        a=0
+      }
+  }
+  return reservas;
+})()

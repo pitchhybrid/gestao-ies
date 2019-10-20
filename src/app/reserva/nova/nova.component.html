@@ -1,1 +1,49 @@
-<p>nova works!</p>
+<div class="container margins">
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column">
+            <form [formGroup]="form">
+                <div class="field">
+                    <label for="" class="label">Data da Reserva:</label>
+                    <input type="date" formControlName="dataReserva" class="input">
+                </div>
+                <div class="field">
+                    <label for="" class="label">Tipo de Reserva:</label>
+                    <div class="select is-fullwidth">
+                        <select formControlName="tipoReserva">
+                            <option value="EQUIPAMENTO">Equipamento</option>
+                            <option value="SALA">Sala</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field" *ngIf="form.value.tipoReserva == 'EQUIPAMENTO'">
+                    <label for="" class="label">Reserva:</label>
+                    <div class="select is-fullwidth">
+                        <select formControlName="reserva">
+                            <option *ngFor="let equipamento of equipamentos" value="{{equipamento.id}}">{{equipamento.equipamento}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field" *ngIf="form.value.tipoReserva == 'SALA'">
+                    <label for="" class="label">Reserva:</label>
+                    <div class="select is-fullwidth">
+                        <select formControlName="reserva">
+                            <option *ngFor="let sala of salas" value="{{sala.id}}">{{sala.bloco}} - {{sala.sala}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">Professor:</label>
+                    <div class="select is-fullwidth">
+                        <select formControlName="professor">
+                            <option *ngFor="let professor of professores" value="{{professor.id}}">{{professor.professor}}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="column">
+            <button class="button is-primary is-fullwidth" (click)="salvar()">Reservar</button>
+        </div>
+    </div>
+</div>

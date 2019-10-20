@@ -13,11 +13,11 @@ import { InicioComponent } from './inicio/inicio.component';
 import { CadastrosComponent } from './cadastros/cadastros.component';
 import { StatusPipe } from './status.pipe';
 import { ReservaComponent } from './reserva/reserva.component';
-import { AvisosComponent } from './avisos/avisos.component';
-import { ProfessoresComponent } from './professores/professores.component';
-import { SalasComponent } from './salas/salas.component';
+import { AvisosComponent } from './dashboard/avisos/avisos.component';
+import { ProfessoresComponent } from './dashboard/professores/professores.component';
 import { NovaComponent } from './reserva/nova/nova.component';
 import { ReservasComponent } from './reserva/reservas/reservas.component';
+import { ReservasComponent as ReservasDashboard } from './dashboard/reservas/reservas.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,9 @@ import { ReservasComponent } from './reserva/reservas/reservas.component';
     ReservaComponent,
     AvisosComponent,
     ProfessoresComponent,
-    SalasComponent,
     NovaComponent,
-    ReservasComponent
+    ReservasComponent,
+    ReservasDashboard
   ],
   imports: [
     BrowserModule,

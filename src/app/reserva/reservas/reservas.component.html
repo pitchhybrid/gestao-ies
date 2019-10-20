@@ -1,1 +1,30 @@
-<p>reservas works!</p>
+<div class="container">
+    <div class="margins field">
+        <label for="" class="label">Procurar</label>
+        <input #search type="text" class="input" (keyup)="filtrar(search.value)">
+    </div>
+</div>
+
+<div class="container" style="overflow: auto; height:500px; margin-bottom: 30px">
+    <table class="table is-fullwidth is-striped">
+        <thead>
+            <th>ID</th>
+            <th>DATA DA RESERVA</th>
+            <th>TIPO DA RESERVA</th>
+            <th>RESERVA</th>
+            <th>PROFESSOR</th>
+            <th>FINALIZADA</th>
+       </thead>
+       <tbody>
+           <tr *ngFor="let reserva of reservas" (click)="editar(reserva)">
+            <td>{{reserva.id}}</td>
+            <td>{{reserva.dataReserva | date}}</td>
+            <td>{{reserva.tipoReserva}}</td>
+            <td *ngIf="reserva.reserva.bloco">{{reserva.reserva.bloco}} - {{reserva.reserva.sala}}</td>
+            <td *ngIf="reserva.reserva.equipamento">{{reserva.reserva.tipo}} - {{reserva.reserva.equipamento}}</td>
+            <td>{{reserva.professor.professor}}</td>
+            <td>{{reserva.finalizada}}</td>
+           </tr>
+       </tbody>
+    </table>
+</div>

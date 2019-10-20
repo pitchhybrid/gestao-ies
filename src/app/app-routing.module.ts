@@ -4,11 +4,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CadastrosComponent } from './cadastros/cadastros.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { NovaComponent } from './reserva/nova/nova.component';
+import { ReservasComponent } from './reserva/reservas/reservas.component';
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'cadastros', component: CadastrosComponent},
   { path: 'reserva', component: ReservaComponent ,children:[
-    { path:'nova-reserva', component:NovaComponent }
+    { path:'nova-reserva', component:NovaComponent },
+    { path:'reservas', component:ReservasComponent}
   ]},
   { path: '', redirectTo: '/', pathMatch: 'prefix'}
 ];

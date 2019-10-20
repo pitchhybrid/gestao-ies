@@ -1,5 +1,5 @@
 export interface Equipamento {
-    codigo?: number;
+    id?: number;
     status?: boolean;
     equipamento?: string;
     tipo?: string;

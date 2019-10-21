@@ -7,12 +7,14 @@ import { NovaComponent } from './reserva/nova/nova.component';
 import { ReservasComponent } from './reserva/reservas/reservas.component';
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'cadastros', component: CadastrosComponent},
-  { path: 'reserva', component: ReservaComponent ,children:[
-    { path:'nova-reserva', component:NovaComponent },
-    { path:'reservas', component:ReservasComponent}
-  ]},
-  { path: '', redirectTo: '/', pathMatch: 'prefix'}
+  { path: 'cadastros', component: CadastrosComponent },
+  { path: 'reserva', component: ReservaComponent,
+    children:[
+      { path:'nova-reserva', component:NovaComponent },
+      { path:'reservas', component:ReservasComponent }
+    ]
+  },
+  { path: '', redirectTo: '/', pathMatch: 'prefix' }
 ];
 
 @NgModule({

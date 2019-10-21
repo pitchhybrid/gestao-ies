@@ -13,9 +13,9 @@ export class ProfessoresService {
     return this.professores;
   }
 
-  addProfessor(value: string): void {
+  addProfessor(value: object): void {
     const index: number = this.professores[this.professores.length - 1 ].id;
-    this.professores.push({id: index + 1, professor: value });
+    this.professores.push(Object.assign({id: index + 1},value));
   }
 
   deletarProfessor(value: Professor): void {

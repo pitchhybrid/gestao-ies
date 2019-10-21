@@ -1,8 +1,8 @@
-<div class="container margins">
+<div class="container" style="margin-top: 60px">
     <div class="columns">
-        <div class="column is-2"></div>
+        <div class="column is-3"></div>
         <div class="column">
-            <form [formGroup]="form">
+            <form [formGroup]="form" (ngSubmit)="salvar()">
                 <div class="field">
                     <label for="" class="label">Data da Reserva:</label>
                     <input type="date" formControlName="dataReserva" class="input">
@@ -40,10 +40,10 @@
                         </select>
                     </div>
                 </div>
+                <button class="button is-primary is-fullwidth" type="submit">Reservar</button>
             </form>
         </div>
-        <div class="column">
-            <button class="button is-primary is-fullwidth" (click)="salvar()">Reservar</button>
+        <div class="column is-3">
         </div>
     </div>
 </div>

@@ -14,11 +14,13 @@ import { CadastrosComponent } from './cadastros/cadastros.component';
 import { StatusPipe } from './status.pipe';
 import { ReservaComponent } from './reserva/reserva.component';
 import { AvisosComponent } from './dashboard/avisos/avisos.component';
-import { ProfessoresComponent } from './dashboard/professores/professores.component';
+import { ProfessoresComponent as ProfessoresComponentDash } from './dashboard/professores/professores.component';
 import { NovaComponent } from './reserva/nova/nova.component';
 import { ReservasComponent } from './reserva/reservas/reservas.component';
 import { ReservasComponent as ReservasDashboard } from './dashboard/reservas/reservas.component';
-
+import { EquipamentosComponent } from './cadastros/equipamentos/equipamentos.component';
+import { SalasComponent } from './cadastros/salas/salas.component';
+import { ProfessoresComponent } from './cadastros/professores/professores.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,10 @@ import { ReservasComponent as ReservasDashboard } from './dashboard/reservas/res
     ProfessoresComponent,
     NovaComponent,
     ReservasComponent,
-    ReservasDashboard
+    ReservasDashboard,
+    EquipamentosComponent,
+    SalasComponent,
+    ProfessoresComponentDash
   ],
   imports: [
     BrowserModule,

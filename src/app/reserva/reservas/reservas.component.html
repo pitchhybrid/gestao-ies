@@ -1,4 +1,11 @@
+
 <div class="container">
+    <div class="container margins">
+        <button class="button is-primary" [routerLink]="['/','reserva','nova-reserva']">
+            <i class="fas fa-plus-circle"></i>
+            Nova reserva
+        </button>
+    </div>
     <div class="margins field">
         <label for="" class="label">Procurar</label>
         <input #search type="text" class="input" (keyup)="filtrar(search.value)">

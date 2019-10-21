@@ -1,0 +1,140 @@
+<div class="columns">
+  <div class="column">
+    <button class="button is-primary" (click)="active()">
+      <i class="fas fa-plus-circle"></i>
+      <span style="text-align: center;padding-left: 10px;padding-right: 5px">
+        Novo Equipamento
+      </span>
+    </button>
+  </div>
+  <div class="column"></div>
+</div>
+<div class="columns">
+  <div class="column">
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Status</th>
+          <th>Equipamento</th>
+          <th>Tipo</th>
+          <th>Modelo</th>
+          <th>Fabricante</th>
+          <th>Serie</th>
+          <th>Ultima manutenção</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let equipamento of equipamentoService.equipamentos">
+          <td>{{ equipamento.id }}</td>
+          <td>{{ equipamento.status | status }}</td>
+          <td>{{ equipamento.equipamento }}</td>
+          <td>{{ equipamento.tipo }}</td>
+          <td>{{ equipamento.modelo }}</td>
+          <td>{{ equipamento.fabricante }}</td>
+          <td>{{ equipamento.serie }}</td>
+          <td>{{ equipamento.ultimaManutencao | date }}</td>
+          <td>
+            <div class="columns">
+              <div class="column">
+                <button class="button is-success" (click)="editar(equipamento)">
+                  <i class="far fa-edit"></i>
+                </button>
+              </div>
+              <div class="column">
+                <button class="button is-danger" (click)="deletar(equipamento)">
+                  <i class="fas fa-minus-circle"></i>
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div [class]="modal ? 'modal is-active' : 'modal'">
+  <div class="modal-background" (click)="active()"></div>
+  <div class="modal-content">
+    <form [formGroup]="form" (ngSubmit)="adicionarEquipamento()">
+      <div class="box">
+        <div class="columns">
+          <div class="column">
+            <label class="label">Codigo</label>
+            <input class="input" type="text" formControlName="id" />
+          </div>
+          <div class="column">
+            <label class="label">Status</label>
+            <div class="select is-fullwidth">
+              <select formControlName="status">
+                <option value="true">ATIVO</option>
+                <option value="false">INATIVO</option>
+              </select>
+            </div>
+          </div>
+          <div class="column">
+            <label class="label">Tipo</label>
+            <div class="select is-fullwidth">
+              <select formControlName="tipo">
+                <option value="PROJETOR">Projetor</option>
+                <option value="MICROFONE">Microfone</option>
+                <option value="HEADPHONES">Fones de Ouvido</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <label class="label">Equipamento</label>
+            <input class="input" type="text" formControlName="equipamento" />
+          </div>
+          <div class="column is-one-third">
+            <label class="label">Modelo</label>
+            <input class="input" type="text" formControlName="modelo" />
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <label class="label">Fabricante</label>
+            <input class="input" type="text" formControlName="fabricante" />
+          </div>
+          <div class="column">
+            <label class="label">Serie</label>
+            <input class="input" type="text" formControlName="serie" />
+          </div>
+          <div class="column">
+            <label class="label">Ultima manutenção</label>
+            <input
+              class="input"
+              type="date"
+              formControlName="ultimaManutencao"
+            />
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <button class="button is-info is-fullwidth" type="submit">
+              Salvar
+            </button>
+          </div>
+          <div class="column"></div>
+          <div class="column">
+            <button
+              class="button is-danger is-fullwidth"
+              type="button"
+              (click)="cancelar()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cancelar()"
+  ></button>
+</div>

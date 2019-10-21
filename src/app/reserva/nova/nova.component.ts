@@ -5,23 +5,27 @@ import { SalasService } from 'src/app/salas.service';
 import { EquipamentosService } from 'src/app/equipamentos.service';
 import { Equipamento, Professor,Sala} from '../../interfaces';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-nova',
   templateUrl: './nova.component.html',
   styleUrls: ['./nova.component.css']
 })
 export class NovaComponent implements OnInit {
-
   form: FormGroup;
   professores: Professor[];
   equipamentos: Equipamento[];
   salas: Sala[];
 
-  constructor(private reservaSerice:ReservaService,
-              private professoresService: ProfessoresService,
-              private salasService: SalasService,
-              private equipamentosService:EquipamentosService,
-              private formBuilder:FormBuilder) {
+  constructor(
+    private reservaSerice:ReservaService,
+    private location:Location,
+    private professoresService: ProfessoresService,
+    private salasService: SalasService,
+    private equipamentosService:EquipamentosService,
+    private formBuilder:FormBuilder
+    ) {
                 this.form = this.formBuilder.group({
                   dataReserva:['', Validators.required],
                   tipoReserva:['', Validators.required],
@@ -46,6 +50,7 @@ export class NovaComponent implements OnInit {
         this.form.value.reserva = this.getObject(this.salas,this.form.value.reserva)
       }
       this.reservaSerice.addReserva(this.form.value)
+      this.location.back();
     }
   }
 

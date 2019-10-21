@@ -3,7 +3,7 @@ import { ProfessoresService } from '../../professores.service';
 import { Professor } from '../../professor';
 
 @Component({
-  selector: 'app-professores',
+  selector: 'app-professores-dash',
   templateUrl: './professores.component.html',
   styleUrls: ['./professores.component.css']
 })
@@ -16,13 +16,6 @@ export class ProfessoresComponent implements OnInit {
 
   ngOnInit() {
     this.professores = this.professorService.listar();
-  }
-
-  addProfessor() {
-    if (this.professor) {
-      this.professorService.addProfessor(this.professor.toUpperCase());
-      this.cancelar();
-    }
   }
 
   filtrar(event: string) {

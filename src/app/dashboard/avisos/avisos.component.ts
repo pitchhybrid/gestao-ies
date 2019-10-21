@@ -3,7 +3,7 @@ import { AvisosService } from '../../avisos.service';
 import { Aviso } from '../../aviso';
 
 @Component({
-  selector: 'app-avisos',
+  selector: 'app-avisos-dash',
   templateUrl: './avisos.component.html',
   styleUrls: ['./avisos.component.css']
 })

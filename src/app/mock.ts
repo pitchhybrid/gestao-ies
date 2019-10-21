@@ -5,7 +5,7 @@ export const professores: Professor[] = (()=>{
   const letras: string = 'ABCDEFGHIJKLIJKLMNIOPQRSTUVWXYZ';
   let cont: number = 0;
   for(const i of letras){
-    professores.push({id:++cont,professor:`PROF:. ${i}`});
+    professores.push({id:++cont,professor:`PROF:. ${i}`,titulo:'DOUTORADO'});
   }
   return professores;
 })();

@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservaComponent implements OnInit {
 
-  rendered: boolean = true;
+  constructor() {
+  }
   
-  constructor() { }
-
   ngOnInit() {
   }
- 
+  
 
 }

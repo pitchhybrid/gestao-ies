@@ -25,14 +25,6 @@
           <span>Salas</span>
         </a>
       </li>
-      <li [class]="klasses[3]">
-        <a (click)="change(3)">
-          <span class="icon is-small">
-            <i class="far fa-file-alt" aria-hidden="true"></i>
-          </span>
-          <span>Avisos</span>
-        </a>
-      </li>
     </ul>
   </div>
   <div *ngIf="view == 0">
@@ -43,8 +35,5 @@
   </div>
   <div *ngIf="view == 2">
       <app-salas></app-salas>
-  </div>
-  <div *ngIf="view == 3">
-      
   </div>
 </div>

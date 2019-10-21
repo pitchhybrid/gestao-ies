@@ -9,7 +9,7 @@ import { EquipamentosService } from '../equipamentos.service';
 })
 export class CadastrosComponent implements OnInit {
   
-  klasses: string[] = ['is-active','','','']
+  klasses: string[] = ['is-active','','']
   view:number = 0
   ngOnInit(){
 
@@ -17,11 +17,10 @@ export class CadastrosComponent implements OnInit {
 
   change(event:number){
     this.view = event
-    var um = '', dois='', tres='', quatro = ''
+    var um = '', dois='', tres=''
     if(event == 0) um = 'is-active'
     if(event == 1) dois = 'is-active'
     if(event == 2) tres = 'is-active'
-    if(event == 3) quatro = 'is-active'
-    this.klasses = [um,dois,tres,quatro]
+    this.klasses = [um,dois,tres]
   }
 }

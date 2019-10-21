@@ -8,9 +8,7 @@ import { Professor } from '../../professor';
   styleUrls: ['./professores.component.css']
 })
 export class ProfessoresComponent implements OnInit {
-  modal = false;
   professores: Professor[];
-  professor: string;
   scroll = true;
   constructor(private professorService: ProfessoresService) { }
 
@@ -31,11 +29,4 @@ export class ProfessoresComponent implements OnInit {
     });
   }
 
-  active() {
-    this.modal = true;
-  }
-
-  cancelar() {
-    this.modal = false;
-  }
 }

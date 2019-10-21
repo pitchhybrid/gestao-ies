@@ -2,9 +2,6 @@
     <div class="panel-heading">
         <i class="fas fa-sticky-note"></i>
         AVISOS IMPORTANTES
-        <Button class="button is-primary to-right" (click)="active()">
-            <i class="fas fa-plus-circle"></i>
-        </Button>
     </div>
     <div class="panel-block">
         <p class="control has-icons-left">
@@ -28,22 +25,3 @@
         </button>
     </div>
 </nav>
-
-<div [class]="modal ? 'modal is-active':'modal'">
-    <div class="modal-background" (click)="cancelar()"></div>
-    <div class="modal-content">
-       <div class="box">
-            <div class="columns">
-                <div class="column">
-                        <label for="" class="label">Adicionar Aviso:</label>
-                    <input type="text" class="input" [(ngModel)]="aviso">
-                </div>
-                <div class="column">
-                    <label for="" class="label">&nbsp;</label>
-                    <button class="button is-info is-fullwidth" (click)="addAviso()">Adicionar</button>
-                </div>
-            </div>
-       </div>
-    </div>
-    <button class="modal-close is-large" aria-label="close" (click)="cancelar()"></button>
-</div>

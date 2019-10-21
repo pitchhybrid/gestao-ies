@@ -10,29 +10,11 @@ import { Aviso } from '../../aviso';
 export class AvisosComponent implements OnInit {
 
   avisos: Aviso[];
-  modal = false;
-  aviso: string;
   scroll = true;
   constructor( private avisosService: AvisosService) { }
 
   ngOnInit() {
     this.avisos = this.avisosService.listar();
-  }
-
-  addAviso() {
-    if (this.aviso) {
-      this.avisosService.addAviso(this.aviso.toUpperCase());
-      this.cancelar();
-    }
-    this.aviso = '';
-  }
-
-  active() {
-    this.modal = true;
-  }
-
-  cancelar() {
-    this.modal = false;
   }
 
   filtrar(event: string) {

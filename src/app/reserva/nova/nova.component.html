@@ -40,7 +40,14 @@
                         </select>
                     </div>
                 </div>
-                <button class="button is-primary is-fullwidth" type="submit">Reservar</button>
+                <div class="columns">
+                    <div class="column">
+                        <button class="button is-warning is-fullwidth" (click)="location.back()" type="button">Voltar</button>
+                    </div>
+                    <div class="column">
+                        <button class="button is-primary is-fullwidth" type="submit">Reservar</button>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="column is-3">

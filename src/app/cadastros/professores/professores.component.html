@@ -10,6 +10,7 @@
   <div class="column"></div>
 </div>
 <div class="columns">
+  <div class="column"></div>
   <div class="column">
     <table class="table is-fullwidth">
       <thead>
@@ -21,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let professor of professoresService.professores">
+        <tr *ngFor="let professor of professores">
           <td>{{ professor.id }}</td>
           <td>{{ professor.professor }}</td>
           <td>{{ professor.titulo }}</td>
@@ -43,7 +44,32 @@
       </tbody>
     </table>
   </div>
+  <div class="column"></div>
 </div>
+
+<div class="tabs is-fullwidth">
+  <ul>
+    <li>
+      <a (click)="anterior()">
+        <span class="icon"><i class="fas fa-angle-left" aria-hidden="true"></i></span>
+        <span>Anterior</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <span class="icon"><i class="fas fa-angle-up" aria-hidden="true"></i></span>
+        <!-- <span>Subir</span> -->
+      </a>
+    </li>
+    <li>
+      <a (click)="proximo()">
+        <span>Proximo</span>
+        <span class="icon"><i class="fas fa-angle-right" aria-hidden="true"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
 <div [class]="modal ? 'modal is-active' : 'modal'">
   <div class="modal-background" (click)="modal = false"></div>
   <div class="modal-content">
@@ -60,7 +86,13 @@
           </div>
           <div class="column">
             <label class="label">Titulo</label>
-            <input class="input" type="text" formControlName="titulo">
+            <div class="select is-fullwidth">
+              <select formControlName="titulo">
+                <option value="DOUTORADO">Doutorado</option>
+                <option value="MESTRADO">Mestrado</option>
+                <option value="PUBLICANTE">Publicante</option>
+              </select>
+            </div>
           </div>
           <div class="column">
               <label for="" class="label">&nbsp;</label>

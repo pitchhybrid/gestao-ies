@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EquipamentosService } from 'src/app/equipamentos.service';
+import { Equipamento } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-equipamentos',
@@ -13,6 +14,10 @@ export class EquipamentosComponent implements OnInit {
   modal = false;
   edicao = false;
   dados: object;
+  start: number = 0;
+  end: number = 10;
+  max: number;
+  equipamentos: Equipamento[];
 
   constructor(private formBuilder: FormBuilder, private equipamentoService: EquipamentosService) {
     this.form = this.formBuilder.group({
@@ -32,7 +37,39 @@ export class EquipamentosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.max = this.equipamentoService.equipamentos.length;
+    this.equipamentos = this.paginate(0,10);
+  }
 
+  proximo(){
+    this.start += 10
+    this.end += 10
+    var max = this.max - this.end
+    if(max < 10){
+      this.start = this.start + max
+      this.end = this.end + max
+      console.log(max)
+    }
+    this.equipamentos = this.paginate(this.start,this.end);
+  }
+
+  anterior(){
+    this.start -= 10
+    this.end -= 10
+    if(this.end < 10){
+      this.start = 0
+      this.end = 10
+    }
+    this.equipamentos = this.paginate(this.start,this.end);
+  }
+
+  paginate(start: number,end:number): Equipamento[]{
+    var equipamentos:Equipamento[] = this.equipamentoService.listarEquipamentos();
+    var a: Equipamento[] = []
+    for(var i = start;i < end;i++){
+      a.push(equipamentos[i])
+    }
+    return a;
   }
 
   active() {

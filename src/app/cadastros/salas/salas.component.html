@@ -1,1 +1,109 @@
-<p>salas works!</p>
+<div class="columns">
+    <div class="column">
+      <button class="button is-primary" (click)="modal = true">
+        <i class="fas fa-plus-circle"></i>
+        <span style="text-align: center;padding-left: 10px;padding-right: 5px">
+          Nova Sala
+        </span>
+      </button>
+    </div>
+    <div class="column"></div>
+  </div>
+  <div class="columns">
+    <div class="column is-3"></div>
+    <div class="column">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Bloco</th>
+            <th>Sala</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sala of salas">
+            <td>{{ sala.id }}</td>
+            <td>{{ sala.bloco }}</td>
+            <td>{{ sala.sala }}</td>
+            <td>
+              <div class="columns">
+                <div class="column">
+                  <button class="button is-success" (click)="editar(sala)">
+                    <i class="far fa-edit"></i>
+                  </button>
+                </div>
+                <div class="column">
+                  <button class="button is-danger" (click)="deletar(sala)">
+                    <i class="fas fa-minus-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="column is-3"></div>
+  </div>
+  <div class="tabs is-fullwidth">
+      <ul>
+        <li>
+          <a (click)="anterior()">
+            <span class="icon"><i class="fas fa-angle-left" aria-hidden="true"></i></span>
+            <span>Anterior</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span class="icon"><i class="fas fa-angle-up" aria-hidden="true"></i></span>
+            <!-- <span>Subir</span> -->
+          </a>
+        </li>
+        <li>
+          <a (click)="proximo()">
+            <span>Proximo</span>
+            <span class="icon"><i class="fas fa-angle-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  <div [class]="modal ? 'modal is-active' : 'modal'">
+    <div class="modal-background" (click)="modal = false"></div>
+    <div class="modal-content">
+      <form [formGroup]="form" (ngSubmit)="adicionarSala()">
+        <div class="box">
+          <div class="columns">
+            <div class="column">
+              <label class="label">Bloco:</label>
+              <div class="select is-fullwidth">
+                <select formControlName="bloco">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
+              </div>
+            </div>
+            <div class="column">
+              <label class="label">Sala:</label>
+              <input class="input" type="text" formControlName="sala">
+            </div>
+            <div class="column">
+                <label for="" class="label">&nbsp;</label>
+              <button type="submit" class="button is-success">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button
+      class="modal-close is-large"
+      aria-label="close"
+      (click)="modal = false"
+    ></button>
+  </div>
+  

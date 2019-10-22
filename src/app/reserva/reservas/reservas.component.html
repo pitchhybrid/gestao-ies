@@ -10,9 +10,6 @@
         <label for="" class="label">Procurar</label>
         <input #search type="text" class="input" (keyup)="filtrar(search.value)">
     </div>
-</div>
-
-<div class="container" style="overflow: auto; height:500px; margin-bottom: 30px">
     <table class="table is-fullwidth is-striped">
         <thead>
             <th>ID</th>
@@ -34,4 +31,26 @@
            </tr>
        </tbody>
     </table>
+    <div class="tabs is-fullwidth">
+        <ul>
+            <li>
+            <a (click)="anterior()">
+                <span class="icon"><i class="fas fa-angle-left" aria-hidden="true"></i></span>
+                <span>Anterior</span>
+            </a>
+            </li>
+            <li>
+            <a>
+                <span class="icon"><i class="fas fa-angle-up" aria-hidden="true"></i></span>
+                <!-- <span>Subir</span> -->
+            </a>
+            </li>
+            <li>
+            <a (click)="proximo()">
+                <span>Proximo</span>
+                <span class="icon"><i class="fas fa-angle-right" aria-hidden="true"></i></span>
+            </a>
+            </li>
+        </ul>
+    </div>
 </div>

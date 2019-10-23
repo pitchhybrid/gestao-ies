@@ -71,4 +71,7 @@ export class SalasComponent implements OnInit {
     this.resetForm();
     this.salas = this.paginate(0,10)
   }
+
+  editar(sala:Sala){}
+  deletar(sala:Sala){}
 }

@@ -20,7 +20,7 @@ export class NovaComponent implements OnInit {
 
   constructor(
     private reservaSerice:ReservaService,
-    private location:Location,
+    public location:Location,
     private professoresService: ProfessoresService,
     private salasService: SalasService,
     private equipamentosService:EquipamentosService,

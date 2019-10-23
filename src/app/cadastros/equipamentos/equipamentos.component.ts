@@ -92,6 +92,7 @@ export class EquipamentosComponent implements OnInit {
     }
     this.resetForm();
     this.modal = false;
+    this.equipamentos = this.paginate(0,10);
   }
 
   editar(value: object) {

@@ -9,16 +9,14 @@ import { isEqual } from 'lodash';
 export class EquipamentosService {
 
   equipamentos: Equipamento[] = equipamentos;
-  constructor() {
-    this.equipamentos = this.listarEquipamentos();
-  }
+  constructor() {}
 
   listarEquipamentos(): Equipamento[] {
     return this.equipamentos;
   }
 
   addEquipamento(value: object): void {
-    this.equipamentos.push(value);
+    this.equipamentos.unshift(value);
   }
 
   editarEquipamento({ formObject, value }: { formObject: object; value: object; }): void {

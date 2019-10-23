@@ -11,4 +11,8 @@ export class SalasService {
   listar(): Sala[] {
     return this.salas;
   }
+
+  addSala(sala:Sala){
+    this.salas.unshift(sala);
+  }
 }

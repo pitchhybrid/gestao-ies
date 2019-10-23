@@ -20,7 +20,8 @@ import { ReservasComponent } from './reserva/reservas/reservas.component';
 import { ReservasComponent as ReservasDashboard } from './dashboard/reservas/reservas.component';
 import { EquipamentosComponent } from './cadastros/equipamentos/equipamentos.component';
 import { SalasComponent } from './cadastros/salas/salas.component';
-import { ProfessoresComponent } from './cadastros/professores/professores.component'
+import { ProfessoresComponent } from './cadastros/professores/professores.component';
+import { ReservadoPipe } from './reservado.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { ProfessoresComponent } from './cadastros/professores/professores.compon
     ReservasDashboard,
     EquipamentosComponent,
     SalasComponent,
-    ProfessoresComponentDash
+    ProfessoresComponentDash,
+    ReservadoPipe
   ],
   imports: [
     BrowserModule,

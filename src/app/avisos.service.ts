@@ -17,7 +17,7 @@ export class AvisosService {
 
   addAviso(value: string) {
     const last = this.avisos[this.avisos.length - 1 ].id;
-    this.avisos.push({id: last + 1, aviso: value});
+    this.avisos.unshift({id: last + 1, aviso: value});
   }
 
   deletarAviso(aviso: Aviso) {

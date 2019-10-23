@@ -16,7 +16,7 @@ export class ReservaService {
 
   addReserva(reserva: Reserva){
     var id = this.reservas[this.reservas.length -1].id + 1
-    this.reservas.push(Object.assign({id,finalizada:false},reserva));
+    this.reservas.unshift(Object.assign({id,finalizada:false},reserva));
   }
 
   alterarReserva(){

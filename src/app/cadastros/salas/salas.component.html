@@ -10,12 +10,11 @@
     <div class="column"></div>
   </div>
   <div class="columns">
-    <div class="column is-3"></div>
+    <div class="column is-5"></div>
     <div class="column">
       <table class="table is-fullwidth">
         <thead>
           <tr>
-            <th>Codigo</th>
             <th>Bloco</th>
             <th>Sala</th>
             <th>Ações</th>
@@ -23,7 +22,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let sala of salas">
-            <td>{{ sala.id }}</td>
             <td>{{ sala.bloco }}</td>
             <td>{{ sala.sala }}</td>
             <td>
@@ -44,7 +42,7 @@
         </tbody>
       </table>
     </div>
-    <div class="column is-3"></div>
+    <div class="column is-5"></div>
   </div>
   <div class="tabs is-fullwidth">
       <ul>
@@ -68,6 +66,7 @@
         </li>
       </ul>
     </div>
+    
   <div [class]="modal ? 'modal is-active' : 'modal'">
     <div class="modal-background" (click)="modal = false"></div>
     <div class="modal-content">

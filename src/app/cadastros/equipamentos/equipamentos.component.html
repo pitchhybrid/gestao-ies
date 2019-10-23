@@ -14,7 +14,6 @@
     <table class="table is-fullwidth">
       <thead>
         <tr>
-          <th>Codigo</th>
           <th>Status</th>
           <th>Equipamento</th>
           <th>Tipo</th>
@@ -27,7 +26,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let equipamento of equipamentos">
-          <td>{{ equipamento.id }}</td>
           <td>{{ equipamento.status | status }}</td>
           <td>{{ equipamento.equipamento }}</td>
           <td>{{ equipamento.tipo }}</td>

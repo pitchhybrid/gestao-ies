@@ -85,6 +85,7 @@ export class ProfessoresComponent implements OnInit {
     }
     this.resetForm();
     this.modal = false;
+    this.professores = this.paginate(0,10);
   }
 
   editar(value: object) {

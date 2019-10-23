@@ -28,6 +28,10 @@ export class SalasComponent implements OnInit {
     this.salas = this.paginate(0,10);
   }
 
+  resetForm(){
+    this.form.setValue({bloco:'',sala:''});
+  }
+
   proximo(){
     this.start += 10
     this.end += 10
@@ -57,5 +61,14 @@ export class SalasComponent implements OnInit {
       a.push(salas[i])
     }
     return a;
+  }
+
+  adicionarSala(){
+    if(this.form.valid){
+      this.salasService.addSala(this.form.value)
+    }
+    this.modal = false;
+    this.resetForm();
+    this.salas = this.paginate(0,10)
   }
 }
